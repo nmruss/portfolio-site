@@ -3,6 +3,7 @@ import { useParams } from 'next/navigation'
 import { useEffect, useState, Component } from 'react'
 import projectData from '../../project_data.json'
 import { Project } from "@/../types"
+import Image from 'next/image';
 
 export default function Detail(){
     let defaultContent:Project = {
@@ -72,10 +73,20 @@ export default function Detail(){
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center">
-                <div className="max-w-[800px]">
-                    <div className="flex flex-col pt-10">
+            <div className="flex justify-center align-middle flex-col">
+                <div className="max-w-[800px] mx-auto my-0">
+                    <div className="flex flex-col pt-20">
                         <h3>{content.summary}</h3>
+                    </div>
+                </div>
+                <div className="max-w-[800px] mx-auto my-0">
+                    <div className="flex flex-col pt-5">
+                        <Image width={20} height={20} alt="additional content" className="" src={'/img/down-chevron.svg'}></Image> 
+                    </div>
+                </div>
+                <div className="max-w-[800px] mx-auto my-0">
+                    <div className="flex flex-col pt-20">
+                        {content.images[0] ? <Image width={600} height={300} alt="additional content" className="border-2 border-zinc-500" src={content.images[0]}></Image> : <div></div>}
                     </div>
                 </div>
             </div>
