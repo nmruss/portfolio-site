@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: "Source Code Pro", monospace;
+}
+
+.nav-container{
+  background-color:rgba(255,255,255,.9);
+  height:60px;
+  display:flex;
+  align-items: center;
+  position:fixed;
+  width:100vw;
+  z-index:1;
+}
+
+.nav{
+  font-size:16pt;
+  display:flex;
+  justify-content: space-around;
+  width:20%;
+  margin:0 auto;
+  
+  a{
+    color:black;
+    display:flex;
+  }
+  a:hover{
+    color:gray;
+  }
+}
+
+.regular {
+  font-weight: 500;
+}
+
+.black {
+  font-weight: 700;
+}
+
+.header-container {
+  text-align: center;
+}
+
+#header {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  div {
+    width: 100%;
+  }
+
+  h1 {
+    color: black;
+    margin: 0;
+  }
+}
+
+.down-chevron {
+  position: absolute;
+  bottom: 3%;
+  height: 40px;
+  width: 40px;
+  left: 50%;
+}
+
+.content-container {
+  color: white;
+  background-color: black;
+  text-align: right;
+  padding-top:60px;
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.content-header-container {
+  padding: 60px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-card-container {
+  text-align: left;
+  padding:20px 0px;
+
+  h1 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  img {
+    width: 100%;
+  }
+  a {
+    text-decoration:none;
+    color:white;
+  }
+  a:hover{
+    color:gray;
+    text-decoration:none;
+  }
+}
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.blink {
+  animation: blinkAnim 1.5s steps(1) infinite;
+}
+
+
+///DETAIL PAGES///
+.content-detail-container,.detail-header-image{
+  height:500px;
+}
+.content-detail-container{
+  padding-top:60px;
+}
+
+.detail-header-image{
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  .title{
+    color:white;
+    text-align:center;
+  }
+}
+
+.detail-info-container{
+  margin-top:100px;
+  padding-bottom:100px;
+}
+
+.detail-image-container{
+  text-align:center;
+  padding:80px 0;
+  img{
+    max-width:600px;
+    max-height:300px;
+  }
+}
+
+.contact-container{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+@media screen and (max-width:600px){
+  .detail-image-container{
+    img{
+      width:100%;
+    }
+  }
+}
