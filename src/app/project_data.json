@@ -71,7 +71,7 @@
         "detail_header":"/img/content/datadrivegame/header.jpg",
         "type":"Game",
         "role":"Developer",
-        "tech":["Construct 3", "Javascript"],
+        "tech":["Construct 3 Game Engine", "Javascript"],
         "summary":"Promoting AT&T's new 5G service, we created a series of spyhunter inspired HTML5 games. Elliciting some hilariously bad reviews.",
         "links":["https://www.theverge.com/2019/5/20/18632457/at-t-5g-e-game-data-drive-spy-hunter-bad","https://www.pcmag.com/news/play-atts-new-silly-lte-speed-video-game","https://about.att.com/newsroom/2019/att_data_drive.html"],
         "images":["/img/content/datadrivegame/additional_1.jpg"],

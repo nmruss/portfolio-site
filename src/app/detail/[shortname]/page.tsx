@@ -4,6 +4,7 @@ import { useEffect, useState, Component } from 'react'
 import projectData from '../../project_data.json'
 import { Project } from "@/../types"
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Detail(){
     let defaultContent:Project = {
@@ -32,7 +33,7 @@ export default function Detail(){
     const renderTechnologies = ()=>
     {
         if(content.tech){
-            let tList = "Technologies: ";
+            let tList = "";
             content.tech.forEach((t:string,ind:number)=>{
                 if(ind !== 0)
                     tList += ", " + t;
@@ -49,13 +50,13 @@ export default function Detail(){
         let linkList:Array<React.JSX.Element> = [];
         if(content.links){
             content.links.forEach((l:string,ind:Number)=>{
-                linkList.push(<div><a rel="noopener noreferrer" target="_blank" href={l}>{l}</a></div>);
+                linkList.push(<div key={l + ind}><Link className="hover:underline" rel="noopener noreferrer" target="_blank" href={l}>{l}</Link></div>);
             })
             if(linkList.length > 0)
             {
                 return (
                     <div>
-                        <b>Links:</b>
+                        <b>Relevant Links:</b>
                         {linkList}
                     </div>
                 );
@@ -73,7 +74,7 @@ export default function Detail(){
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center align-middle flex-col">
+            <div className="flex justify-center align-middle flex-col mb-10">
                 <div className="max-w-[800px] mx-auto my-0">
                     <div className="flex flex-col pt-20">
                         <h3>{content.summary}</h3>
@@ -84,6 +85,16 @@ export default function Detail(){
                         <Image width={20} height={20} alt="additional content" className="" src={'/img/down-chevron.svg'}></Image> 
                     </div>
                 </div>
+
+                <div className="w-[100vw] max-w-[800px] mx-auto my-0">
+                    <div className="pt-20">
+                        {renderLinks()}
+                    </div>
+                    <div className="pt-5">
+                        <b>Technologies: </b>{renderTechnologies()}
+                    </div>
+                </div>
+                
                 <div className="max-w-[800px] mx-auto my-0">
                     <div className="flex flex-col pt-20">
                         {content.images[0] ? <Image width={600} height={300} alt="additional content" className="border-2 border-zinc-500" src={content.images[0]}></Image> : <div></div>}

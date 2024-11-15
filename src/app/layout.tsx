@@ -14,11 +14,12 @@ export default function Layout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="h-[100%]">
           <Nav/>
           <div className="mt-[104px]">
             {children}
           </div>
+          <footer className="bg-black text-white text-center py-10 mb-0">Nick Russo, designer.</footer>
       </body>
     </html>
   );
