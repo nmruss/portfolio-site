@@ -5,6 +5,7 @@ import projectData from '../../project_data.json'
 import { Project } from "@/../types"
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 
 export default function Detail(){
     let defaultContent:Project = {
@@ -24,6 +25,13 @@ export default function Detail(){
     let [content,setContent] = useState<Project>(defaultContent);
 
     const params = useParams<{shortname:string}>();
+    const pathname = usePathname();
+
+    useEffect(()=>{
+        if(pathname !== '/'){
+           window.scroll(0,0);
+        }
+    },[pathname])
     
     useEffect(()=>{
         let c = projectData.find(el => el.shortname == params.shortname);
@@ -103,7 +111,7 @@ export default function Detail(){
 
                 <div className="max-w-[800px] mx-auto my-0">
                     <div className="flex flex-col pt-10">
-                        <Link href={'/'} className="hover:underline">&lt; back to home</Link>
+                    <Link href={'/'} className="hover:underline">&lt; back to home</Link>
                     </div>
                 </div>
             </div>
