@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "./components/Nav";
 import "./globals.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Nick Russo",
@@ -21,7 +22,9 @@ export default function Layout({
               {children}
             </div>
           </main>
-          <footer className="bg-black text-white text-center p-10">Nick Russo, Developer.</footer>
+          <footer className="bg-black text-white text-center p-10">
+            Nick Russo, Developer. | <Link className="hover:underline" href="mailto:nrussotech@gmail.com">nrussotech@gmail.com</Link>
+          </footer>
       </body>
     </html>
   );

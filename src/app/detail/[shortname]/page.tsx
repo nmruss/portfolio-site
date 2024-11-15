@@ -100,34 +100,13 @@ export default function Detail(){
                         {content.images[0] ? <Image width={600} height={300} alt="additional content" className="border-2 border-zinc-500" src={content.images[0]}></Image> : <div></div>}
                     </div>
                 </div>
+
+                <div className="max-w-[800px] mx-auto my-0">
+                    <div className="flex flex-col pt-10">
+                        <Link href={'/'} className="hover:underline">&lt; back to home</Link>
+                    </div>
+                </div>
             </div>
         </div>
-        // <Container fluid style={{"padding":0}} className="content-detail-container">
-        //     <div className="detail-header-image" style={{backgroundImage:"url(" + content.detail_header + ")"}}>
-        //         <div className="title">
-        //             <h1>
-        //                 {content.title}
-        //             </h1>
-        //         </div>
-        //     </div>
-        //     <Container className="detail-info-container">
-        //         <Row>
-        //             <Col xs={12}>
-        //                 <h3>{content.summary}</h3>
-        //             </Col>
-        //             <Col xs={12}>
-        //                 <div className="detail-image-container">
-        //                     <img alt={content.shortname} src={content.images ? content.images[0] : "/img/content/loading_content_image.jpg"}/>
-        //                 </div>
-        //             </Col>
-        //             <Col xs={12}>
-        //                 <p>Role: {content.role}</p>
-        //                 <p>Project Type: {content.type}</p>
-        //                 <p>{renderTechnologies()}</p>
-        //                 <p>{renderLinks()}</p>
-        //             </Col>
-        //         </Row>
-        //     </Container>
-        // </Container>
     );
 }
