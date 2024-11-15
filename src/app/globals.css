@@ -19,10 +19,12 @@ html{
   height:100%;
   box-sizing:border-box;
 }
+
 body{
   min-height:100%;
   display:grid;
   grid-template-rows:auto 1fr auto;
+  align-items:end;
 }
 
 .nav-container{
