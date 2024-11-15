@@ -14,12 +14,14 @@ export default function Layout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-[100%]">
+      <body className="min-h-[100vh]">
           <Nav/>
-          <div className="mt-[104px]">
-            {children}
-          </div>
-          <footer className="bg-black text-white text-center py-10 mb-0">Nick Russo, designer.</footer>
+          <main>
+            <div className="pt-[104px]">
+              {children}
+            </div>
+          </main>
+          <footer className="bg-black text-white text-center p-10">Nick Russo, Developer.</footer>
       </body>
     </html>
   );
