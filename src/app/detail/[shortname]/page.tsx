@@ -86,27 +86,27 @@ export default function Detail(){
             </div>
             <div className="flex justify-center align-middle flex-col mb-10">
                 <div className="max-w-[800px] mx-auto my-0">
-                    <div className="flex flex-col pt-20">
+                    <div className="flex flex-col pt-20 px-10">
                         <h3>{content.summary}</h3>
                     </div>
                 </div>
                 <div className="max-w-[800px] mx-auto my-0">
-                    <div className="flex flex-col pt-5">
+                    <div className="flex flex-col pt-5 px-10">
                         <Image width={20} height={20} alt="additional content" className="" src={'/img/down-chevron.svg'}></Image> 
                     </div>
                 </div>
 
                 <div className="w-[100vw] max-w-[800px] mx-auto my-0">
-                    <div className="pt-20">
+                    <div className="pt-20 px-10">
                         {renderLinks()}
                     </div>
-                    <div className="pt-5">
+                    <div className="pt-5 px-10">
                         <b>Technologies: </b>{renderTechnologies()}
                     </div>
                 </div>
                 
                 <div className="max-w-[800px] mx-auto my-0">
-                    <div className="flex flex-col pt-20">
+                    <div className="flex flex-col pt-20 px-10">
                         {content.images[0] ? <Image width={600} height={300} alt="additional content" className="border-2 border-zinc-500" src={content.images[0]}></Image> : <div></div>}
                     </div>
                 </div>
