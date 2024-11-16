@@ -15,7 +15,7 @@ export default function Layout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-[100vh]">
+      <body className="min-h-[100vh] w-[100vw] overflow-x-hidden">
           <Nav/>
           <main>
             <div className="pt-[104px]">

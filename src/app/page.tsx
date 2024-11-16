@@ -18,8 +18,8 @@ export default function Home() {
       return contentCards;
     }
     return (
-      <div className="flex flex-row bg-black text-white justify-center">
-        <div className="max-w-screen-lg px-10 overflow-x-hidden">
+      <div className="flex flex-row bg-black text-white justify-center w-[100vw]">
+        <div className="max-w-screen-lg">
           <div className="content-header-container">
               <div>
                 <h1 className="black">i&apos;m nick</h1>

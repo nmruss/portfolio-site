@@ -97,7 +97,7 @@ export default function Detail(){
                 </div>
 
                 <div className="w-[100vw] max-w-[800px] mx-auto my-0">
-                    <div className="pt-20 px-10">
+                    <div className="pt-20 px-10 overflow-x-hidden">
                         {renderLinks()}
                     </div>
                     <div className="pt-5 px-10">
