@@ -8,10 +8,10 @@ export default function Home() {
       const contentCards:Array<ReactNode> = [];
 
       projectData.forEach((project:Project, ind) => {
-        const {id, thumbnail, title, shortname, role} = project;
+        const { thumbnail, title, shortname, role} = project;
         contentCards.push(
           <div key={"content" + ind} className="hover:cursor-pointer">
-              <ContentCard id={id} thumbnail={thumbnail} title={title} shortname={shortname} role={role}/>
+              <ContentCard thumbnail={thumbnail} title={title} shortname={shortname} role={role} />
           </div>
         );
       });

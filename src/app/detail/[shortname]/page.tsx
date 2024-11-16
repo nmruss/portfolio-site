@@ -1,6 +1,6 @@
 'use client'
 import { useParams } from 'next/navigation'
-import { useEffect, useState, Component } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import projectData from '../../project_data.json'
 import { Project } from "@/../types"
 import Image from 'next/image';
@@ -8,21 +8,23 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 
 export default function Detail(){
-    let defaultContent:Project = {
-        "id":0,
-        "title": "",
-        "thumbnail": "",
-        "detail_header":"",
-        "type":"",
-        "role":"",
-        "tech":[""],
-        "summary":"",
-        "links":[""],
-        "images":[""],
-        "shortname":"loading"
-    }
-
-    let [content,setContent] = useState<Project>(defaultContent);
+    const defaultContent:Project = useMemo(()=>{
+        return {
+            "id":0,
+            "title": "",
+            "thumbnail": "",
+            "detail_header":"",
+            "type":"",
+            "role":"",
+            "tech":[""],
+            "summary":"",
+            "links":[""],
+            "images":[""],
+            "shortname":"loading"
+        }
+    },[])
+   
+    const [content,setContent] = useState<Project>(defaultContent);
 
     const params = useParams<{shortname:string}>();
     const pathname = usePathname();
@@ -34,9 +36,9 @@ export default function Detail(){
     },[pathname])
     
     useEffect(()=>{
-        let c = projectData.find(el => el.shortname == params.shortname);
+        const c = projectData.find(el => el.shortname == params.shortname);
         setContent(c || defaultContent);
-    },[params.shortname])
+    },[params.shortname, defaultContent])
 
     const renderTechnologies = ()=>
     {
@@ -55,10 +57,10 @@ export default function Detail(){
     }
 
     const renderLinks = ()=>{
-        let linkList:Array<React.JSX.Element> = [];
+        const linkList:Array<React.JSX.Element> = [];
         if(content.links){
-            content.links.forEach((l:string,ind:Number)=>{
-                linkList.push(<div key={l + ind}><Link className="hover:underline" rel="noopener noreferrer" target="_blank" href={l}>{l}</Link></div>);
+            content.links.forEach((l:string,ind:number)=>{
+                linkList.push(<div key={l + ind}><Link className="hover:underline text-blue-600" rel="noopener noreferrer" target="_blank" href={l}>{l}</Link></div>);
             })
             if(linkList.length > 0)
             {
