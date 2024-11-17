@@ -77,7 +77,7 @@ export default function Detail(){
     
     return(
         <div>
-            <div className="flex justify-center mt-20">
+            <div className={`flex justify-center ${window.innerWidth <= 500 ? "" : "mt-10"}`}>
                 <div className="h-[50vh] w-[100vw] max-w-[800px] max-h-[400px] flex flex-col justify-center align-middle text-center" style={{backgroundImage:"url(" + content.detail_header + ")",backgroundPosition:'center', backgroundSize:'cover'}}>
                     <div className="max-w-[80%] mx-auto my-0">
                         <h1 className="text-white font-bold text-3xl" style={{textShadow:"1px 1px 5px black"}}>{content.title}</h1>
