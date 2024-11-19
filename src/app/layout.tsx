@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Nick Russo",
-  description: "Developer, Designer, Creator",
+  description: "Developer, Designer, Creator"
 };
 
 export default function Layout({
@@ -15,6 +15,7 @@ export default function Layout({
 }>) {
   return (
     <html lang="en">
+      <link rel="shortcut icon" href="/img/favicon.ico" type="img/x-icon"></link>
       <body className="min-h-[100vh] w-[100vw] overflow-x-hidden">
           <Nav/>
           <main>
