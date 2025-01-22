@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Nick Russo",
-  description: "Developer, Designer, Creator"
+  description: "Designer, Developer, Creator"
 };
 
 export default function Layout({
@@ -24,7 +24,7 @@ export default function Layout({
             </div>
           </main>
           <footer className="bg-black text-white text-center p-10">
-            Nick Russo, Developer. | <Link className="hover:underline" href="mailto:nrussotech@gmail.com">nrussotech@gmail.com</Link>
+            Nick Russo, Designer + Developer. | <Link className="hover:underline" href="mailto:nrussotech@gmail.com">nrussotech@gmail.com</Link>
           </footer>
       </body>
     </html>

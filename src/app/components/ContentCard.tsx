@@ -20,7 +20,6 @@ const ContentCard = ({thumbnail,title,shortname,role}:CardItem) => {
       </div>
       <div className="col-span-5 flex flex-col justify-center">
         <h1 className="text-white font-bold text-lg">{title}</h1>
-        <h2 className="text-white text-md">{"Role: " + role}</h2>
         <h3 className="text-xs hover:underline"><Link href={"/detail/" + shortname}>see more &gt;</Link></h3>
       </div>
       <div className="col-span-1"></div>
