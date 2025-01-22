@@ -6,10 +6,10 @@ interface CardItem{
   thumbnail:string;
   title:string;
   shortname:string;
-  role:string;
+  //role:string;
 }
 
-const ContentCard = ({thumbnail,title,shortname,role}:CardItem) => {
+const ContentCard = ({thumbnail,title,shortname}:CardItem) => {
   return (
     <div className="grid grid-cols-12 gap-8 grid-flow-col transition-all">
       <div className="col-span-1"></div>
